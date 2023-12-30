@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login patient{% endblock %}
+{% block content %}
+
+<h1>Enter your credentials and login</h1>
+
+<form action="/signin/" method="post" style="padding-left:15px;padding-right:15px;">
+    {% csrf_token %}
+
+    <label for=" ">Username</label>
+    <input type="text" id="username"  name="username" placeholder="Enter the username" Required>
+    <br>
+
+    <label for=" ">Password</label>
+    <input type="text" id="password1" name="password1" placeholder="Enter the password" required>
+    <br>
+    <button class="btn btn-success" style="margin-bottom:15px;"><a href="/record" class="text-light">Login</a> </button> <br>
+</form>
+
+{% endblock content %}

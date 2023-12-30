@@ -1,0 +1,74 @@
+<{% extends 'base.html' %}
+{% load static %}
+{% block title %} Make an appoinment{% endblock %}
+{% block content %}
+<form style="padding-left:15px;padding-right:15px;">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for=" ">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" Required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for=" ">Place</label>
+      <input type="text" class="form-control" id="place" placeholder="Place" Required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+    <label for=" ">House name</label>
+    <input type="text" class="form-control" id="housename" placeholder="House name" Required>
+  </div>
+  <div class="form-group col-md-6">
+    <label for=" ">Phone Number</label>
+    <input type="number" class="form-control" id="phonenumber" placeholder="Phone" Required>
+  </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for=" ">Age</label>
+      <input type="number" class="form-control" id="Age" placeholder="Age" Required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for=" ">Date</label>
+      <input type="date" class="form-control" id="date" placeholder="dd-mm-yyyy"Required>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for=" ">Department</label>
+      <select id="department" class="form-control" Required>
+        <option>------</option>
+        {% for department in departments %}
+        <option value="{{department.name}}">{{department.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for=" ">Doctor</label>
+      <select id="doctor" class="form-control" Required>
+        <option>------</option>
+        {% for doctor in doctors %}
+        <option value="{{doctor.name}}">{{doctor.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-check">
+      <center>
+      <label class="form-group" for=" ">
+        (We will confirm you by call)
+      </label>
+      </center>
+    </div>
+  </div>
+  <center>
+  <button type="submit" class="btn btn-primary" onclick="alert('Your appoinment is successful!')" >Book an appoinment</button>
+    </center>
+</form>
+{% endblock content %}

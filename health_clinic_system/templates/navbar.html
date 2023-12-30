@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="navbar navbar-dark text-dark bg-warning">
+<div>
+    <img src="{% static 'img/call.png' %}" alt="logo" width="15" height="15">
+    <b>0483-2750043, +91 7034216556</b>
+</div>
+    <div>
+        <img src="{% static 'img/location.jpg' %}" alt="logo" width="15" height="15">
+        Kottakkal, Malappuram
+    </div>
+    <form class="form-inline">
+        <button class="btn btn-primary my-2 my-md-0" type="submit" ><a href="/booking" class="text-light">Make an appoinment</a></button>
+ </form>
+</nav>
+
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+    <img src="{% static 'img/Curewell_logo.jpeg' %}" alt="logo" width="100" height="100">
+  </a>
+  <a class="navbar-brand" href="{% url 'alldoctors' %}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'aboutus' %}">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'ourdoctors' %}">Doctors</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Departments
+        </a>
+         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'alldoctors' %}" style="position:relative;" >All Doctors</a>
+          {% for dep in links %}
+          <a class="dropdown-item" href="{{dep.get_url}}">{{dep.name}}</a>
+          {% endfor %}
+            </div>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contactus' %}">Contact us</a>
+      </li>
+
+
+    </ul>
+     <form class="form-inline">
+      <button class="btn btn-success my-2 my-sm-0" type="submit"><a href="/patient" class="text-light">Patient Login</a></button>
+     <br>
+
+     </form>
+  </div>
+</nav>
